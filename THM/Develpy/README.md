@@ -4,7 +4,9 @@ This writeup documents the exploitation process for the **Develpy** machine on T
 
 ## Room details
 Difficulty: Medium
+
 Type: Python, Linux Privilege Escalation
+
 Link: https://tryhackme.com/room/bsidesgtdevelpy
 
 ## 1. Reconnaissance
