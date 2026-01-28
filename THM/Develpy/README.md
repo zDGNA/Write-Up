@@ -2,6 +2,11 @@
 
 This writeup documents the exploitation process for the **Develpy** machine on TryHackMe, covering everything from initial scanning to gaining `root` access via **Python Library Hijacking**.
 
+## Room details
+Difficulty: Medium
+Type: Python, Linux Privilege Escalation
+Link: https://tryhackme.com/room/bsidesgtdevelpy
+
 ## 1. Reconnaissance
 
 The process began with a port scan using `nmap` to identify services running on target `10.81.159.78`.
