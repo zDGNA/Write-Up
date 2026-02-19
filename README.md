@@ -34,7 +34,6 @@ Most of the methodologies involve:
 * **Post-Exploitation:** LinPEAS, Socat (for manual API interaction).
 
 ---
-
-* ## Happy Hacking! 🚀*
+## Happy Hacking!🚀
 
 ---
