@@ -60,7 +60,7 @@ By inspecting recent API requests, I discovered a valid database username.
 ```bash
 curl -i http://10.81.143.182:8086/debug/requests
 ```
-
+ 
 Found the database username: o5yY6yya.
 
 ![Found username](<./assets/Screenshot 4.png>)
