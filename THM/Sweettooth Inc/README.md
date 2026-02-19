@@ -139,7 +139,7 @@ ssh uzJk6Ry98d8C@10.81.143.182 -p 2222
 
 I successfully logged in via SSH on port 2222.
 and got flag from user.txt
-User Flag: THM{V4w4FhBmtp4RFDti}
+User Flag: *THM{V4w4FhBmtp4RFDti}*
 
 ## 4. Privilege Escalation (Container Root)
 During internal enumeration, I found that the Docker socket (/var/run/docker.sock) was writable by the current user. This is a common path for privilege escalation and container escapes.
@@ -155,7 +155,7 @@ echo -e "GET /containers/GGWP/archive?path=/root/root.txt HTTP/1.1\r\nHost: loca
 <br>
 *Figure 10: (/root/root.txt flag)*
 
-root flag : THM{5qsDivHdCi2oabwp}
+root flag : *THM{5qsDivHdCi2oabwp}*
 
 5. Docker Escape (Host Root)
 To escape the container and gain root access to the host, I created a new container and mounted the host's root directory (/) to /mnt inside the container.
@@ -175,10 +175,9 @@ echo -e "GET /containers/GGWP/archive?path=/mnt/root/root.txt HTTP/1.1\r\nHost: 
 ![The second /root/root.txt flag](<./assets/Screenshot 11.png>)
 <br>
 *Figure 11: (The second /root/root.txt flag)*
+The second /root/root.txt flag: *THM{nY2ZahyFABAmjrnx}*
 
 ## Final Results:
-
-The second /root/root.txt flag: THM{nY2ZahyFABAmjrnx}
 
 Final
 All tasks completed successfully.
